@@ -1,11 +1,205 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>テストLP</title>
+  <meta charset="UTF-8" />
+  <title>LiteMe｜学びを続けるオンラインサービス</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LiteMeは、動画コンテンツと決済管理をシンプルにまとめたオンラインサービスです。" />
+  <!-- OGP(任意) -->
+  <meta property="og:title" content="LiteMe｜学びを続けるオンラインサービス">
+  <meta property="og:description" content="動画視聴×決済をシンプルに。最短で導入できます。">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{
+      --brand:#14b8a6;      /* アクア系メインカラー */
+      --brand-ink:#0f766e;
+      --cta:#f59e0b;        /* CTA色 */
+      --ink:#0f172a;        /* 文字色 */
+      --muted:#64748b;      /* 補助テキスト */
+      --card:#ffffff;       /* カード背景 */
+      --bg:#f8fafc;         /* ページ背景 */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:auto;padding:0 20px}
+
+    /* ヘッダー */
+    .site-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e2e8f0}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .logo{font-weight:800;letter-spacing:.3px}
+    .nav a.btn{padding:10px 16px;background:var(--brand);color:#fff;border-radius:999px;font-weight:700}
+    .nav a.btn:hover{opacity:.9}
+
+    /* ヒーロー */
+    .hero{background:linear-gradient(180deg, #ecfeff 0%, #ffffff 100%);padding:64px 0 40px;border-bottom:1px solid #e2e8f0}
+    .hero h1{font-size:clamp(28px,4vw,40px);margin:.2em 0 .3em}
+    .hero p.lead{color:var(--muted);font-size:clamp(15px,2.2vw,18px);margin:0 0 20px}
+    .cta{display:inline-flex;gap:10px;align-items:center;padding:14px 22px;background:var(--cta);color:#fff;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(.98)}
+    .subcta{display:inline-block;margin-left:12px;color:var(--brand-ink);font-weight:700}
+
+    /* セクション共通 */
+    section{padding:36px 0}
+    h2{font-size:clamp(22px,3vw,28px);margin:0 0 16px}
+    .grid{display:grid;gap:16px}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* 3カラム */
+    @media (min-width: 900px){
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+    }
+
+    /* 価格風ブロック */
+    .plan{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .price{font-size:28px;font-weight:900}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* フッター */
+    footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid #e2e8f0}
+
+    /* 埋め込み(任意) */
+    iframe{width:100%;height:720px;border:0;border-radius:12px}
+  </style>
 </head>
 <body>
-  <h1>はじめてのLPテスト</h1>
-  <p>GitHub Pages で公開できました！</p>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">LiteMe</div>
+      <nav>
+        <a href="#features">特徴</a>&nbsp;&nbsp;
+        <a href="#pricing">プラン</a>&nbsp;&nbsp;
+        <a href="#faq">FAQ</a>&nbsp;&nbsp;
+        <a class="btn" href="YOUR_FORM_URL_HERE" target="_blank" rel="noopener">申し込み</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="container">
+      <h1>動画視聴 × 決済管理を、<br>もっとシンプルに。</h1>
+      <p class="lead">LiteMe は、学習コンテンツの配信と会費管理をまとめて扱える軽量なオンラインサービスです。<br>導入は最短、LPを1枚用意するだけ。</p>
+      <p>
+        <a class="cta" href="YOUR_FORM_URL_HERE" target="_blank" rel="noopener">会費ペイで申込・決済へ</a>
+        <a class="subcta" href="#how">仕組みを見る →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 特徴 -->
+  <section id="features">
+    <div class="container">
+      <h2>LiteMeの特徴</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>① 速い導入</h3>
+          <p class="muted">静的LP＋外部決済で今日からスタート。面倒なサーバー構築なし。</p>
+        </div>
+        <div class="card">
+          <h3>② 低コスト</h3>
+          <p class="muted">GitHub PagesやNetlifyで無料公開。運用コストを最小化。</p>
+        </div>
+        <div class="card">
+          <h3>③ 拡張しやすい</h3>
+          <p class="muted">動画埋め込み／配信スケジュール／会員向け限定ページなど段階的に拡張可能。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 仕組み -->
+  <section id="how">
+    <div class="container">
+      <h2>シンプルな仕組み</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>LPで案内</h3>
+          <p class="muted">このページのようなLPで、サービス概要・日程・コンテンツを提示します。</p>
+        </div>
+        <div class="card">
+          <h3>外部決済に遷移</h3>
+          <p class="muted">CTAから会費ペイの「申込フォームURL」に遷移。安全に決済・登録。</p>
+        </div>
+      </div>
+      <p class="muted">※ 会費ペイのフォームはURL連携が基本です。ページ内<i>iframe</i>埋め込みは相手側の設定によって不可の場合があります。</p>
+    </div>
+  </section>
+
+  <!-- （任意）フォーム埋め込みテスト：表示されない場合は削除してOK -->
+  <section>
+    <div class="container">
+      <div class="card">
+        <h2>（任意）ページ内で申込フォームを表示</h2>
+        <p class="muted">下にフォームが表示されない場合は、ドメインの埋め込み制限です。リンク遷移運用に切り替えてください。</p>
+        <iframe src="YOUR_FORM_URL_HERE" title="会費ペイ申込フォーム"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 価格/プラン風 -->
+  <section id="pricing">
+    <div class="container">
+      <h2>プラン（例）</h2>
+      <div class="grid grid-3">
+        <div class="card plan">
+          <h3>ライト</h3>
+          <div class="price">￥1,000 / 月</div>
+          <ul class="muted">
+            <li>月1本の動画</li>
+            <li>コミュニティ閲覧</li>
+          </ul>
+          <a class="cta" href="YOUR_FORM_URL_HERE" target="_blank" rel="noopener">このプランで申し込む</a>
+        </div>
+        <div class="card plan">
+          <h3>スタンダード</h3>
+          <div class="price">￥3,000 / 月</div>
+          <ul class="muted">
+            <li>月4本の動画</li>
+            <li>アーカイブ視聴</li>
+          </ul>
+          <a class="cta" href="YOUR_FORM_URL_HERE" target="_blank" rel="noopener">このプランで申し込む</a>
+        </div>
+        <div class="card plan">
+          <h3>プロ</h3>
+          <div class="price">￥5,000 / 月</div>
+          <ul class="muted">
+            <li>全動画＋資料DL</li>
+            <li>限定ウェビナー</li>
+          </ul>
+          <a class="cta" href="YOUR_FORM_URL_HERE" target="_blank" rel="noopener">このプランで申し込む</a>
+        </div>
+      </div>
+      <p class="muted">※ 上記は表示例です。実際の価格・内容は依頼主の要件に合わせて変更してください。</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>よくある質問</h2>
+      <div class="grid">
+        <details class="card"><summary>支払い方法は？</summary><p class="muted">会費ペイの申込フォームより各種決済に対応します。</p></details>
+        <details class="card"><summary>アーカイブ視聴は可能？</summary><p class="muted">可能です。配信方法（例：OneStream/YouTube/Vimeo等）は運営ポリシーに準じます。</p></details>
+        <details class="card"><summary>途中解約はできますか？</summary><p class="muted">会費ペイの管理画面ポリシーに基づき対応します。詳細は申し込みページをご確認ください。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <small>&copy; 2025 LiteMe</small>
+    </div>
+  </footer>
 </body>
 </html>
