@@ -13,62 +13,76 @@
   <meta property="og:url" content="https://lotusessence-academy.github.io/LotusEssence_Academy/">
   <meta property="og:image" content="erika1.jpg">
   <meta name="twitter:card" content="summary_large_image">
+
   <style>
     :root{
-      /* ロゴ寄りの落ち着いたトーン */
+      /* ロゴ寄せのベースカラー（落ち着き） */
       --bg:#fff8fb; --card:#ffffff; --ink:#3b2230; --muted:#7b5d6a;
       --brand:#d98aa8; --brand-strong:#6f354a; --brand-ink:#8b4760;
       --radius:16px; --shadow:0 10px 26px rgba(111,53,74,.14);
       --container:1080px;
+
+      /* 遊び強めの追加色 */
+      --glow:#ffe0ee; --glass:#ffffffcc;
       --grad1:#fff4f9; --grad2:#ffe9f3; --grad3:#fff4f9;
     }
+
     *{box-sizing:border-box}
     html,body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;scroll-behavior:smooth}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--container);margin:auto;padding:0 18px}
     img{max-width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow);object-fit:cover}
 
-    /* ===== 背景：透かしロゴ + ゆるグラデ ===== */
+    /* 背景：やわらかグラデ + ロゴ透かし + スポットライト */
     body{
       background:
         radial-gradient(1200px 800px at 20% -10%, var(--grad2), transparent 60%),
         radial-gradient(1000px 600px at 110% 20%, var(--grad1), transparent 60%),
         radial-gradient(900px 600px at 30% 120%, var(--grad3), transparent 60%),
         var(--bg);
-      animation: gentleGradient 28s linear infinite alternate;
       background-attachment: fixed;
+      animation: gentleGradient 28s linear infinite alternate;
     }
     body::before{
-      /* 透かしロゴ（固定・最背面） */
       content:"";
-      position:fixed; inset:0;
-      background: url("logo_2.png") center/46vw no-repeat;
-      opacity:.035;
-      pointer-events:none; z-index:-1;
+      position:fixed; inset:0; z-index:-2;
+      background:url("logo_2.png") center/44vw no-repeat;
+      opacity:.035; pointer-events:none;
+    }
+    /* スポットライト（マウスの周りがほんのり明るい） */
+    body::after{
+      content:"";
+      position:fixed; inset:-20vmax; z-index:-1; pointer-events:none;
+      background:radial-gradient(20vmax 20vmax at var(--mx,50%) var(--my,40%), rgba(255,255,255,.35), transparent 60%);
+      transition:opacity .3s ease;
     }
     @keyframes gentleGradient{
-      0%   { background-position: 0 0, 0 0, 0 0; }
-      50%  { background-position: 2% -1%, -1% 1%, 1% 2%; }
-      100% { background-position: 0 0, 0 0, 0 0; }
+      0%{background-position:0 0,0 0,0 0}
+      50%{background-position:2% -1%,-1% 1%,1% 2%}
+      100%{background-position:0 0,0 0,0 0}
     }
 
-    /* ===== Header ===== */
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(8px);border-bottom:1px solid #f0d7e1}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:60px}
+    /* ヘッダー（ガラス風 + 微グロウ） */
+    .site-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border-bottom:1px solid #f0d7e1}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px}
     .brand{display:flex;align-items:center;gap:10px}
-    .brand-mark{height:36px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.05))}
-    .nav-links{display:flex;align-items:center;gap:8px}
-    .nav a{padding:8px 10px;border-radius:10px}
+    .brand-mark{height:36px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.06))}
+    .nav-links{display:flex;align-items:center;gap:10px}
+    .nav a{padding:8px 12px;border-radius:12px}
     .nav a:hover{background:#f9e9f0}
-    .btn{padding:10px 18px;background:var(--brand-strong);color:#fff;border-radius:999px;font-weight:700;box-shadow:var(--shadow);transition:transform .12s ease, background .2s ease}
-    .btn:hover{background:#5c2c3e;transform:translateY(-1px)}
-    .btn.glow{box-shadow:0 0 0 0 rgba(111,53,74,.35);animation: glowPulse 3.6s ease-in-out infinite}
-    @keyframes glowPulse{
-      0%,100%{box-shadow:0 0 0 0 rgba(111,53,74,.0)}
-      60%{box-shadow:0 0 0 14px rgba(111,53,74,.08)}
+    .btn{padding:12px 20px;background:var(--brand-strong);color:#fff;border-radius:999px;font-weight:800;letter-spacing:.02em;
+      box-shadow:0 6px 16px rgba(111,53,74,.22), inset 0 1px 0 #fff4;
+      transition:transform .12s ease, background .2s ease, box-shadow .2s ease}
+    .btn:hover{background:#5c2c3e;transform:translateY(-1px);box-shadow:0 10px 24px rgba(111,53,74,.28), inset 0 1px 0 #fff6}
+    .btn.glow{position:relative}
+    .btn.glow::after{
+      content:"";position:absolute;inset:-2px;border-radius:999px;
+      background:conic-gradient(from 0deg, #fff0, #ffd6e9 30%, #fff0 60%, #ffd6e9 90%, #fff0 100%);
+      filter:blur(10px);opacity:.6;z-index:-1;animation:spin 6s linear infinite;
     }
+    @keyframes spin{to{transform:rotate(1turn)}}
 
-    /* Hamburger */
+    /* ハンバーガー */
     .hamburger{display:none;position:relative;width:40px;height:40px;border:none;background:transparent;cursor:pointer;border-radius:10px}
     .hamburger:focus-visible{outline:2px solid #b77a90}
     .hamburger span,.hamburger::before,.hamburger::after{
@@ -81,52 +95,58 @@
     .hamburger[aria-expanded="true"]::before{top:19px;transform:rotate(45deg)}
     .hamburger[aria-expanded="true"]::after{bottom:19px;transform:rotate(-45deg)}
 
-    /* Mobile menu */
-    .mobile-panel{display:none;position:fixed;inset:0 0 auto 0;top:60px;z-index:40;background:rgba(255,255,255,.98);border-top:1px solid #f0d7e1;box-shadow:0 12px 30px rgba(0,0,0,.06)}
-    .mobile-panel.open{display:block;animation:slideDown .18s ease}
-    @keyframes slideDown{from{transform:translateY(-8px);opacity:.0}to{transform:translateY(0);opacity:1}}
-    .mobile-links{display:grid;gap:6px;padding:14px 18px}
-    .mobile-links a{padding:12px 10px;border-radius:10px}
+    /* モバイルメニュー（ガラス） */
+    .mobile-panel{display:none;position:fixed;inset:0 0 auto 0;top:64px;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border-top:1px solid #f0d7e1;box-shadow:0 12px 30px rgba(0,0,0,.06)}
+    .mobile-panel.open{display:block;animation:slideDown .2s ease}
+    @keyframes slideDown{from{transform:translateY(-8px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .mobile-links{display:grid;gap:8px;padding:16px 18px}
+    .mobile-links a{padding:12px 10px;border-radius:12px}
     .mobile-links a:hover{background:#f9e9f0}
     .mobile-links .btn{display:block;text-align:center}
 
-    /* ===== Hero ===== */
-    .hero{padding:64px 0;border-bottom:1px solid #f0d7e1}
-    .hero-grid{display:grid;gap:24px;align-items:center}
-    @media(min-width:900px){.hero-grid{grid-template-columns:1fr 1fr}}
-    .hero h1{margin:0 0 12px;color:#a01d56;line-height:1.28;font-size:clamp(22px,6.4vw,40px);text-wrap:balance;letter-spacing:.02em}
+    /* ヒーロー（花びらパーティクル + 斜めガラスカード） */
+    .hero{padding:72px 0 0;position:relative;overflow:hidden}
+    .petals{position:absolute;inset:0;pointer-events:none;z-index:-1}
+    .hero-grid{display:grid;gap:28px;align-items:center}
+    @media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+    .hero h1{margin:0 0 14px;color:#a01d56;line-height:1.2;font-size:clamp(24px,6.2vw,44px);text-wrap:balance;letter-spacing:.01em}
     .hero p{color:var(--muted);margin:0 0 16px}
     .cta{display:inline-block;padding:14px 22px;background:var(--brand-strong);color:#fff;border-radius:14px;font-weight:800;box-shadow:var(--shadow);transition:transform .12s ease, background .2s ease}
     .cta:hover{background:#5c2c3e;transform:translateY(-1px)}
     .subcta{margin-left:12px;color:var(--brand-ink);font-weight:700}
-
-    /* 右側写真に“バッジ”をふわっと浮遊 */
-    .pic{position:relative;isolation:isolate}
-    .petal{
-      position:absolute; right:10px; bottom:10px; z-index:2;
-      background:#ffffffcc; backdrop-filter:blur(4px);
-      border:1px solid #f0d7e1; border-radius:12px;
-      padding:6px 8px; box-shadow:var(--shadow);
-      animation: floatY 6.5s ease-in-out infinite;
-    }
-    .petal img{height:28px;width:auto;display:block}
-    @keyframes floatY{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
+    .glass{
+      background:var(--glass); border:1px solid #f0d7e1; border-radius:20px; padding:18px 18px; 
+      box-shadow:0 20px 50px rgba(111,53,74,.08);
+      transform:skewY(-1.2deg); backdrop-filter:blur(6px);
     }
 
-    /* ===== Sections / Cards ===== */
-    section{padding:48px 0}
+    /* 波形の区切り */
+    .wave{display:block;line-height:0}
+    .wave svg{display:block;width:100%;height:auto;transform:translateY(2px)}
+
+    /* セクション共通 */
+    section{padding:56px 0}
     h2{color:var(--brand-ink);margin:0 0 16px}
-    .card{background:var(--card);padding:22px;border:1px solid #f0d7e1;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px}
+    .card{background:var(--card);padding:22px;border:1px solid #f0d7e1;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;transform:translateZ(0)}
+    .card.tilt{will-change:transform; transition:transform .1s ease}
 
-    /* Profile */
+    /* プロフィール */
     .profile{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
     .profile .pic{flex:0 0 320px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#ffe5ef}
     .profile .text{flex:1;min-width:260px}
-    .profile .text p{margin:0 0 10px}
 
-    /* FAQ: detailsで小さなインタラクション */
+    /* マルキー帯（お知らせ） */
+    .marquee{
+      overflow:hidden; white-space:nowrap; border-top:1px solid #f0d7e1; border-bottom:1px solid #f0d7e1;
+      background:#fff5f9cc; backdrop-filter:blur(4px);
+    }
+    .marquee .track{
+      display:inline-block; padding:10px 0; animation:marq 22s linear infinite;
+    }
+    .marquee b{color:var(--brand-ink)}
+    @keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* FAQ（details） */
     details.card{padding:0}
     details.card > summary{
       list-style:none; cursor:pointer; padding:18px 22px; font-weight:700;
@@ -136,46 +156,41 @@
     details.card[open]{box-shadow:0 10px 26px rgba(111,53,74,.12)}
     details .muted{padding:0 22px 18px}
 
-    /* Footer */
-    footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid #f0d7e1}
+    /* フッター */
+    footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid #f0d7e1}
     .footmark{height:22px;vertical-align:middle;opacity:.9;margin-right:6px}
 
-    /* ===== Scroll reveal ===== */
-    .reveal{opacity:0; transform:translateY(10px); filter:saturate(.9); transition:opacity .6s ease, transform .6s ease, filter .6s ease}
+    /* スクロールリビール */
+    .reveal{opacity:0; transform:translateY(12px); filter:saturate(.9); transition:opacity .6s ease, transform .6s ease, filter .6s ease}
     .reveal.in{opacity:1; transform:none; filter:saturate(1)}
 
-    /* Responsive */
+    /* レスポンシブ */
     @media (max-width:900px){
       .nav-links{display:none}
       .hamburger{display:block}
     }
     @media (max-width:760px){
       .container{padding:0 16px}
-      .nav{height:56px}
-      .brand-mark{height:28px}
-      .nav a{font-size:14px;padding:6px 8px}
+      .nav{height:60px}
+      .brand-mark{height:30px}
+      .nav a{font-size:14px}
       .btn{padding:10px 16px}
-      .hero{padding:44px 0}
-      .hero h1{font-size:clamp(20px,7vw,30px);line-height:1.3}
-      .cta{display:inline-block;padding:14px 20px}
-      .subcta{display:block;margin:10px 0 0}
+      .hero{padding:60px 0 0}
       .profile{flex-direction:column;align-items:center}
       .profile .pic{flex:0 0 auto;width:88%;max-width:380px;aspect-ratio:auto}
       .profile .text{width:100%;font-size:16.5px;line-height:1.9}
-      .profile .text b{font-size:18px}
-      section{padding:40px 0}
-      .card{padding:18px}
       #pricing .card .cta{width:100%;max-width:360px}
     }
 
-    /* 動きを抑えたい人向け */
+    /* 動きを抑えたい設定 */
     @media (prefers-reduced-motion: reduce){
       *{animation:none !important; transition:none !important}
+      body::after{opacity:0}
     }
   </style>
 </head>
 <body>
-<header class="site-header" role="banner">
+<header class="site-header">
   <div class="container nav reveal">
     <a href="#" class="brand" aria-label="Lotus Essence Academy">
       <img src="logo_1.png" alt="Lotus Essence Academy" class="brand-mark">
@@ -192,10 +207,9 @@
   </div>
 
   <!-- SPメニュー -->
-  <div id="mobileMenu" class="mobile-panel" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+  <div id="mobileMenu" class="mobile-panel" role="dialog" aria-modal="true">
     <div class="container">
       <div class="mobile-links">
-        <strong id="mobileMenuTitle" style="padding:4px 2px;color:var(--brand-ink)">メニュー</strong>
         <a href="#about">概要</a>
         <a href="#features">特徴</a>
         <a href="#pricing">料金</a>
@@ -207,10 +221,14 @@
   </div>
 </header>
 
-<!-- Hero -->
+<!-- ヒーロー（花びらパーティクルCANVAS + ガラスカード） -->
 <section class="hero">
+  <canvas class="petals" id="petals" aria-hidden="true"></canvas>
   <div class="container hero-grid reveal">
     <div>
+      <div class="glass" style="margin-bottom:12px">
+        <small style="color:var(--brand-ink);font-weight:700">ウェルネスアドバイザー養成スクール “I’m Me” を母体に誕生</small>
+      </div>
       <h1>私を変えたのは、“在り方”。<br>ここでしか学べない“在り方”がある。</h1>
       <p>ドテラ <b>最年少ダブルダイヤモンド 山﨑恵理香</b>が、マインドと在り方を毎月配信。<br>月1回のZoom配信＋アーカイブ視聴で継続的に学べます。</p>
       <p>
@@ -218,18 +236,35 @@
         <a class="subcta" href="#about">まずは概要を見る →</a>
       </p>
     </div>
-    <div class="pic">
+    <div class="pic tilt">
       <img src="erika1.jpg" alt="山﨑恵理香の写真" loading="lazy" />
-      <span class="petal"><img src="logo_2.png" alt="Lotus ロゴ"></span>
     </div>
   </div>
+
+  <!-- 波形の区切り -->
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#fff" d="M0,40 C200,100 460,0 720,40 C980,80 1240,30 1440,70 L1440,100 L0,100 Z"/></svg>
+  </div>
 </section>
+
+<!-- お知らせマルキー -->
+<div class="marquee" role="region" aria-label="お知らせ">
+  <div class="track">
+    <span style="padding-right:48px">🌸 <b>Lotus Essence Academy</b> 新規メンバー募集中</span>
+    <span style="padding-right:48px">🎥 月1回Zoomライブ＋アーカイブ視聴</span>
+    <span style="padding-right:48px">💬 質問ボックスで継続フォロー</span>
+    <!-- ループに見せるため同じ内容をもう一度 -->
+    <span style="padding-right:48px">🌸 <b>Lotus Essence Academy</b> 新規メンバー募集中</span>
+    <span style="padding-right:48px">🎥 月1回Zoomライブ＋アーカイブ視聴</span>
+    <span style="padding-right:48px">💬 質問ボックスで継続フォロー</span>
+  </div>
+</div>
 
 <!-- About -->
 <section id="about">
   <div class="container reveal">
     <h2>講師紹介</h2>
-    <div class="card profile">
+    <div class="card profile tilt">
       <div class="pic"><img src="erika2.jpg" alt="講師：山﨑恵理香" loading="lazy" /></div>
       <div class="text">
         <p><b>山﨑恵理香（ドテラ 最年少ダブルダイヤモンド）</b></p>
@@ -244,14 +279,12 @@
 <section id="origin">
   <div class="container reveal">
     <h2>名称の由来</h2>
-    <div class="card">
+    <div class="card tilt">
       <p>
-        <b>Lotus Essence Academy</b> は、旧称 <b>「I’m Me（ウェルネスアドバイザー養成スクール）」</b> を母体として誕生しました。<br>
-        I’m Me では、女性の自立支援を目的に <b>予防医学 × 自然療法 × メディカルアロマ</b> を軸に学びを提供してきました。
+        <b>Lotus Essence Academy</b> は、旧称 <b>「I’m Me（ウェルネスアドバイザー養成スクール）」</b> を母体として誕生しました。I’m Me では、女性の自立支援を目的に <b>予防医学 × 自然療法 × メディカルアロマ</b> を軸に学びを提供してきました。
       </p>
       <p>
-        その実践知をより多くの人に、より継続的に届けるために
-        名称と構成を刷新し、気軽に参加できる<b>アカデミー形式</b>へと進化しました。
+        その実践知をより多くの人に、より継続的に届けるために、名称と構成を刷新し、気軽に参加できる<b>アカデミー形式</b>へと進化しました。
       </p>
     </div>
   </div>
@@ -261,9 +294,9 @@
 <section id="features">
   <div class="container reveal">
     <h2>特徴</h2>
-    <div class="card"><h3>月1回のZoom配信</h3><p class="muted">ライブの学びはアーカイブに追加されます。不定期開催。</p></div>
-    <div class="card"><h3>アーカイブ視聴</h3><p class="muted">参加直後から過去動画を制限付きで見られます。入会時期により視聴範囲が異なります。</p></div>
-    <div class="card"><h3>質問ボックス</h3><p class="muted">自由に質問OK。全回答は保証しませんが、テーマを選んで不定期に回答します。</p></div>
+    <div class="card tilt"><h3>月1回のZoom配信</h3><p class="muted">ライブの学びはアーカイブに追加されます。不定期開催。</p></div>
+    <div class="card tilt"><h3>アーカイブ視聴</h3><p class="muted">参加直後から過去動画を制限付きで見られます。入会時期により視聴範囲が異なります。</p></div>
+    <div class="card tilt"><h3>質問ボックス</h3><p class="muted">自由に質問OK。全回答は保証しませんが、テーマを選んで不定期に回答します。</p></div>
   </div>
 </section>
 
@@ -271,7 +304,7 @@
 <section id="pricing">
   <div class="container reveal">
     <h2>料金</h2>
-    <div class="card" style="text-align:center">
+    <div class="card tilt" style="text-align:center">
       <h3>月額料金</h3>
       <p><b>5,500円（税込）</b></p>
       <p class="muted">入会金なし・初月から課金開始<br>決済方法：クレジットカード／口座振替（会費ペイ）</p>
@@ -280,19 +313,19 @@
   </div>
 </section>
 
-<!-- FAQ（detailsで開閉） -->
+<!-- FAQ -->
 <section id="faq">
   <div class="container reveal">
     <h2>よくある質問</h2>
-    <details class="card">
+    <details class="card tilt">
       <summary>Q. 質問は必ず回答されますか？</summary>
       <p class="muted">すべての質問への回答はお約束できません。テーマを選定し、不定期にお答えします。</p>
     </details>
-    <details class="card">
+    <details class="card tilt">
       <summary>Q. アーカイブはどのくらい見られますか？</summary>
       <p class="muted">公開範囲・期間は運営ポリシーに準じます。参加期間に応じて視聴範囲が変わる場合があります。</p>
     </details>
-    <details class="card">
+    <details class="card tilt">
       <summary>Q. 退会はできますか？</summary>
       <p class="muted">退会はいつでも可能です。ただし、処理の都合上、<b>毎月20日までに所定フォームから申請</b>いただいた場合のみ翌月以降の課金を停止できます。退会フォームは申込み完了メールに記載されています。</p>
     </details>
@@ -307,7 +340,7 @@
 </footer>
 
 <script>
-  // Hamburger toggle
+  // ===== ハンバーガー =====
   const btn = document.querySelector('.hamburger');
   const panel = document.getElementById('mobileMenu');
   if (btn) {
@@ -326,13 +359,115 @@
     }
   });
 
-  // Scroll reveal
+  // ===== スクロールリビール =====
   const io = new IntersectionObserver(entries=>{
     entries.forEach(ent=>{
       if(ent.isIntersecting){ ent.target.classList.add('in'); io.unobserve(ent.target); }
     });
   },{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ===== スポットライト（カーソル座標をCSSへ） =====
+  window.addEventListener('pointermove', e => {
+    document.body.style.setProperty('--mx', e.clientX + 'px');
+    document.body.style.setProperty('--my', e.clientY + 'px');
+  });
+
+  // ===== 花びらパーティクル（軽量 Canvas） =====
+  (()=>{
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canvas = document.getElementById('petals');
+    if(!canvas || prefersReduced) return;
+    const ctx = canvas.getContext('2d');
+    let w,h,device = Math.min(window.devicePixelRatio || 1, 2);
+    const petals = [];
+    const N = 36;
+
+    const img = new Image();
+    img.src = 'logo_2.png'; // ロゴを淡く使う（形状の連想）
+    img.onload = () => init();
+
+    function resize(){
+      w = canvas.width = innerWidth * device;
+      h = canvas.height = Math.max(300, innerHeight*0.6) * device;
+      canvas.style.width = innerWidth + 'px';
+      canvas.style.height = Math.max(300, innerHeight*0.6) + 'px';
+    }
+
+    function init(){
+      resize();
+      petals.length = 0;
+      for(let i=0;i<N;i++){
+        petals.push({
+          x: Math.random()*w,
+          y: Math.random()*h,
+          s: (Math.random()*0.6 + 0.4) * device,
+          v: Math.random()*0.2 + 0.1, // fall
+          drift: Math.random()*0.6 + 0.2,
+          r: Math.random()*Math.PI*2,
+          vr: (Math.random()-0.5)*0.01
+        });
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function tick(){
+      ctx.clearRect(0,0,w,h);
+      for(const p of petals){
+        p.y += p.v * 40;                  // fall
+        p.x += Math.sin(p.y*0.002)*p.drift*8; // sway
+        p.r += p.vr;
+
+        // wrap
+        if(p.y > h + 50) { p.y = -20; p.x = Math.random()*w; }
+
+        // draw as soft petal (rounded rect) + tiny logo hint
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.r);
+        const a = 0.08;
+        ctx.globalAlpha = a;
+        // petal shape
+        const pw = 50 * p.s, ph = 24 * p.s, r = 12 * p.s;
+        roundRect(ctx, -pw/2, -ph/2, pw, ph, r);
+        ctx.fillStyle = '#f1c3d4';
+        ctx.fill();
+
+        // subtle logo stamp
+        ctx.globalAlpha = 0.06;
+        const lw = 36*p.s, lh = 36*p.s;
+        ctx.drawImage(img, -lw/2, -lh/2, lw, lh);
+        ctx.restore();
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function roundRect(ctx, x, y, w, h, r){
+      ctx.beginPath();
+      ctx.moveTo(x+r, y);
+      ctx.arcTo(x+w, y, x+w, y+h, r);
+      ctx.arcTo(x+w, y+h, x, y+h, r);
+      ctx.arcTo(x, y+h, x, y, r);
+      ctx.arcTo(x, y, x+w, y, r);
+      ctx.closePath();
+    }
+
+    addEventListener('resize', resize);
+  })();
+
+  // ===== カードの3Dチルト（軽量） =====
+  document.querySelectorAll('.tilt').forEach(card=>{
+    let rect;
+    function onMove(e){
+      rect ||= card.getBoundingClientRect();
+      const x = (e.clientX - rect.left)/rect.width - 0.5;
+      const y = (e.clientY - rect.top)/rect.height - 0.5;
+      card.style.transform = `rotateX(${(-y*4).toFixed(2)}deg) rotateY(${(x*4).toFixed(2)}deg) translateZ(0)`;
+    }
+    function reset(){ card.style.transform = ''; rect = null; }
+    card.addEventListener('pointermove', onMove);
+    card.addEventListener('pointerleave', reset);
+  });
 </script>
 </body>
 </html>
