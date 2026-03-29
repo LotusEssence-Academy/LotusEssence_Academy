@@ -1,333 +1,501 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Lotus Essence Academy｜山﨑恵理香のオンラインアカデミー</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ドテラ最年少ダブルダイヤモンド 山﨑恵理香によるオンラインアカデミー。月1回のZoom配信＋アーカイブ視聴、質問ボックスで学びを深める『Lotus Essence Academy』。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ドテラ最年少ダブルダイヤモンド 山﨑恵理香によるオンラインアカデミー。月1回のZoom配信＋アーカイブ視聴、パーソナルコーチングで学びを深める『Lotus Essence Academy』。">
   <link rel="canonical" href="https://lotusessence-academy.github.io/LotusEssence_Academy/">
   <link rel="icon" href="logo_2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lotus Essence Academy｜山﨑恵理香のオンラインアカデミー">
-  <meta property="og:description" content="月1回のZoom配信＋アーカイブ視聴、質問ボックスで学びを深めるオンラインアカデミー。">
+  <meta property="og:description" content="月1回のZoom配信＋アーカイブ視聴で継続的に学べるオンラインアカデミー。">
   <meta property="og:url" content="https://lotusessence-academy.github.io/LotusEssence_Academy/">
   <meta property="og:image" content="erika1.jpg">
   <meta name="twitter:card" content="summary_large_image">
+
   <style>
-    :root{
-      /* ロゴ寄りの落ち着いたトーン */
-      --bg:#fff8fb; --card:#ffffff; --ink:#3b2230; --muted:#7b5d6a;
-      --brand:#d98aa8; --brand-strong:#6f354a; --brand-ink:#8b4760;
-      --radius:16px; --shadow:0 10px 26px rgba(111,53,74,.14);
-      --container:1080px;
-      --grad1:#fff4f9; --grad2:#ffe9f3; --grad3:#fff4f9;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;scroll-behavior:smooth}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--container);margin:auto;padding:0 18px}
-    img{max-width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow);object-fit:cover}
-
-    /* ===== 背景：透かしロゴ + ゆるグラデ ===== */
-    body{
-      background:
-        radial-gradient(1200px 800px at 20% -10%, var(--grad2), transparent 60%),
-        radial-gradient(1000px 600px at 110% 20%, var(--grad1), transparent 60%),
-        radial-gradient(900px 600px at 30% 120%, var(--grad3), transparent 60%),
-        var(--bg);
-      animation: gentleGradient 28s linear infinite alternate;
-      background-attachment: fixed;
-    }
-    body::before{
-      /* 透かしロゴ（固定・最背面） */
-      content:"";
-      position:fixed; inset:0;
-      background: url("logo_2.png") center/46vw no-repeat;
-      opacity:.035;
-      pointer-events:none; z-index:-1;
-    }
-    @keyframes gentleGradient{
-      0%   { background-position: 0 0, 0 0, 0 0; }
-      50%  { background-position: 2% -1%, -1% 1%, 1% 2%; }
-      100% { background-position: 0 0, 0 0, 0 0; }
+    :root {
+      --bg:          #fdf5f8;
+      --bg2:         #f7ecf2;
+      --white:       #ffffff;
+      --ink:         #1c0f18;
+      --muted:       #8a6878;
+      --border:      #e8d0dc;
+      --pink:        #b85d7a;
+      --pink-light:  #f0c8d8;
+      --pink-dark:   #7a3050;
+      --blue:        #6888b0;
+      --blue-light:  #c8d8ec;
+      --blue-pale:   #eef3f9;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+      --container:   1080px;
     }
 
-    /* ===== Header ===== */
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(8px);border-bottom:1px solid #f0d7e1}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:60px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand-mark{height:36px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.05))}
-    .nav-links{display:flex;align-items:center;gap:8px}
-    .nav a{padding:8px 10px;border-radius:10px}
-    .nav a:hover{background:#f9e9f0}
-    .btn{padding:10px 18px;background:var(--brand-strong);color:#fff;border-radius:999px;font-weight:700;box-shadow:var(--shadow);transition:transform .12s ease, background .2s ease}
-    .btn:hover{background:#5c2c3e;transform:translateY(-1px)}
-    .btn.glow{box-shadow:0 0 0 0 rgba(111,53,74,.35);animation: glowPulse 3.6s ease-in-out infinite}
-    @keyframes glowPulse{
-      0%,100%{box-shadow:0 0 0 0 rgba(111,53,74,.0)}
-      60%{box-shadow:0 0 0 14px rgba(111,53,74,.08)}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,245,248,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px; gap: 16px;
+    }
+    .brand img { height: 32px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      padding: 8px 14px; font-size: 13px; font-weight: 500;
+      color: var(--muted); border-radius: 8px;
+      transition: color 0.2s, background 0.2s; letter-spacing: 0.04em;
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--bg2); }
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 22px; background: var(--pink-dark); color: #fff;
+      border-radius: 999px; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.06em; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--pink); transform: translateY(-1px); }
 
     /* Hamburger */
-    .hamburger{display:none;position:relative;width:40px;height:40px;border:none;background:transparent;cursor:pointer;border-radius:10px}
-    .hamburger:focus-visible{outline:2px solid #b77a90}
-    .hamburger span,.hamburger::before,.hamburger::after{
-      content:"";position:absolute;left:8px;right:8px;height:2px;background:#5c2c3e;transition:transform .25s ease,opacity .2s ease,top .25s ease,bottom .25s ease
+    .hamburger {
+      display: none; width: 40px; height: 40px;
+      border: none; background: transparent; cursor: pointer;
+      border-radius: 8px; position: relative;
     }
-    .hamburger span{top:19px}
-    .hamburger::before{top:12px}
-    .hamburger::after{bottom:12px}
-    .hamburger[aria-expanded="true"] span{opacity:0}
-    .hamburger[aria-expanded="true"]::before{top:19px;transform:rotate(45deg)}
-    .hamburger[aria-expanded="true"]::after{bottom:19px;transform:rotate(-45deg)}
-
-    /* Mobile menu */
-    .mobile-panel{display:none;position:fixed;inset:0 0 auto 0;top:60px;z-index:40;background:rgba(255,255,255,.98);border-top:1px solid #f0d7e1;box-shadow:0 12px 30px rgba(0,0,0,.06)}
-    .mobile-panel.open{display:block;animation:slideDown .18s ease}
-    @keyframes slideDown{from{transform:translateY(-8px);opacity:.0}to{transform:translateY(0);opacity:1}}
-    .mobile-links{display:grid;gap:6px;padding:14px 18px}
-    .mobile-links a{padding:12px 10px;border-radius:10px}
-    .mobile-links a:hover{background:#f9e9f0}
-    .mobile-links .btn{display:block;text-align:center}
-
-    /* ===== Hero ===== */
-    .hero{padding:64px 0;border-bottom:1px solid #f0d7e1}
-    .hero-grid{display:grid;gap:24px;align-items:center}
-    @media(min-width:900px){.hero-grid{grid-template-columns:1fr 1fr}}
-    .hero h1{margin:0 0 12px;color:#a01d56;line-height:1.28;font-size:clamp(22px,6.4vw,40px);text-wrap:balance;letter-spacing:.02em}
-    .hero p{color:var(--muted);margin:0 0 16px}
-    .cta{display:inline-block;padding:14px 22px;background:var(--brand-strong);color:#fff;border-radius:14px;font-weight:800;box-shadow:var(--shadow);transition:transform .12s ease, background .2s ease}
-    .cta:hover{background:#5c2c3e;transform:translateY(-1px)}
-    .subcta{margin-left:12px;color:var(--brand-ink);font-weight:700}
-
-    /* 右側写真に“バッジ”をふわっと浮遊 */
-    .pic{position:relative;isolation:isolate}
-    .petal{
-      position:absolute; right:10px; bottom:10px; z-index:2;
-      background:#ffffffcc; backdrop-filter:blur(4px);
-      border:1px solid #f0d7e1; border-radius:12px;
-      padding:6px 8px; box-shadow:var(--shadow);
-      animation: floatY 6.5s ease-in-out infinite;
+    .hamburger span, .hamburger::before, .hamburger::after {
+      content: ""; position: absolute; left: 8px; right: 8px;
+      height: 1.5px; background: var(--pink-dark);
+      transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease, bottom 0.25s ease;
     }
-    .petal img{height:28px;width:auto;display:block}
-    @keyframes floatY{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
+    .hamburger span { top: 20px; }
+    .hamburger::before { top: 13px; }
+    .hamburger::after { bottom: 13px; }
+    .hamburger[aria-expanded="true"] span { opacity: 0; }
+    .hamburger[aria-expanded="true"]::before { top: 20px; transform: rotate(45deg); }
+    .hamburger[aria-expanded="true"]::after { bottom: 20px; transform: rotate(-45deg); }
+
+    .mobile-panel {
+      display: none; position: fixed; inset: 64px 0 auto; z-index: 90;
+      background: rgba(253,245,248,0.98);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+    .mobile-panel.open { display: block; animation: slideDown 0.18s ease; }
+    @keyframes slideDown {
+      from { transform: translateY(-8px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    .mobile-links { display: grid; gap: 4px; padding: 16px 24px; }
+    .mobile-links a { padding: 12px 8px; color: var(--muted); border-radius: 8px; font-size: 15px; }
+    .mobile-links a:hover { background: var(--bg2); color: var(--ink); }
+
+    /* ===== HERO ===== */
+    .hero { padding: 72px 0 80px; }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: center;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display); font-size: 13px;
+      letter-spacing: 0.2em; color: var(--pink);
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.3; color: var(--ink);
+      font-weight: 600; margin-bottom: 20px; letter-spacing: 0.02em;
+    }
+    .hero h1 em { font-style: italic; color: var(--pink); }
+    .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 32px; }
+    .hero-ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .btn-ghost {
+      font-size: 13px; color: var(--pink-dark); font-weight: 600;
+      letter-spacing: 0.04em; display: inline-flex; align-items: center;
+      transition: color 0.2s;
+    }
+    .btn-ghost::after { content: " →"; margin-left: 2px; }
+    .btn-ghost:hover { color: var(--pink); }
+    .hero-image { position: relative; }
+    .hero-image img {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover;
+      border-radius: 4px 28px 4px 28px;
+      box-shadow: 0 20px 60px rgba(100,40,60,0.12);
+    }
+    .hero-badge {
+      position: absolute; bottom: -16px; left: -16px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 14px 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .hero-badge-label {
+      font-size: 11px; color: var(--muted);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .hero-badge-value {
+      font-family: var(--font-display); font-size: 22px;
+      font-weight: 600; color: var(--ink); line-height: 1.2;
+    }
+    .hero-badge-sub { font-size: 11px; color: var(--muted); }
+
+    /* ===== SECTION COMMONS ===== */
+    section { padding: 80px 0; }
+    .section-label {
+      font-family: var(--font-display); font-size: 12px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 10px; display: block;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 600; color: var(--ink); line-height: 1.25;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: linear-gradient(90deg, var(--pink), var(--blue));
+      margin: 16px 0 40px; border-radius: 2px;
+    }
+    .tag {
+      display: inline-block; padding: 4px 12px;
+      border-radius: 999px; font-size: 12px;
+      font-weight: 700; letter-spacing: 0.04em;
+    }
+    .tag-pink { background: var(--pink-light); color: var(--pink-dark); }
+    .tag-blue { background: var(--blue-pale); color: var(--blue); }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .about-image img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top;
+      border-radius: 4px 20px 4px 20px;
+      box-shadow: 0 16px 48px rgba(100,40,60,0.1);
+    }
+    .about-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 12px; }
+
+    /* ===== ORIGIN ===== */
+    #origin { background: var(--bg); }
+    .origin-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 48px; max-width: 760px;
+    }
+    .origin-card p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 12px; }
+    .origin-card p:last-child { margin-bottom: 0; }
+
+    /* ===== FEATURES ===== */
+    #features { background: var(--bg2); }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 24px; position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .feature-item:hover { box-shadow: 0 12px 32px rgba(100,40,60,0.08); }
+    .feature-num {
+      font-family: var(--font-display); font-size: 52px; font-weight: 400;
+      color: var(--pink-light); line-height: 1; margin-bottom: 14px; display: block;
+    }
+    .feature-item h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
+    .feature-item p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+    .feature-badge { position: absolute; top: 16px; right: 16px; font-size: 11px; padding: 3px 10px; }
+
+    /* ===== PRICING ===== */
+    #pricing { background: var(--white); }
+    .pricing-card {
+      max-width: 480px; margin: 0 auto;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 24px; padding: 48px 40px; text-align: center;
+    }
+    .pricing-amount {
+      font-family: var(--font-display); font-size: 56px;
+      font-weight: 600; color: var(--ink); line-height: 1; margin: 14px 0 4px;
+    }
+    .pricing-unit { font-size: 16px; color: var(--muted); }
+    .pricing-note { font-size: 13px; color: var(--muted); margin: 12px 0 32px; line-height: 1.7; }
+    .pricing-features { list-style: none; margin-bottom: 32px; text-align: left; }
+    .pricing-features li {
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--muted);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .pricing-features li::before {
+      content: ""; display: inline-block;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--blue));
+      flex-shrink: 0;
     }
 
-    /* ===== Sections / Cards ===== */
-    section{padding:48px 0}
-    h2{color:var(--brand-ink);margin:0 0 16px}
-    .card{background:var(--card);padding:22px;border:1px solid #f0d7e1;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px}
-
-    /* Profile */
-    .profile{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
-    .profile .pic{flex:0 0 320px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#ffe5ef}
-    .profile .text{flex:1;min-width:260px}
-    .profile .text p{margin:0 0 10px}
-
-    /* FAQ: detailsで小さなインタラクション */
-    details.card{padding:0}
-    details.card > summary{
-      list-style:none; cursor:pointer; padding:18px 22px; font-weight:700;
-      border-radius:var(--radius); outline:none;
+    /* ===== FAQ ===== */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 720px; }
+    details.faq-item { border-bottom: 1px solid var(--border); }
+    details.faq-item:first-child { border-top: 1px solid var(--border); }
+    details.faq-item > summary {
+      list-style: none; cursor: pointer;
+      padding: 22px 0; font-weight: 700; font-size: 15px; color: var(--ink);
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px; outline: none; user-select: none;
     }
-    details.card > summary::-webkit-details-marker{display:none}
-    details.card[open]{box-shadow:0 10px 26px rgba(111,53,74,.12)}
-    details .muted{padding:0 22px 18px}
-
-    /* Footer */
-    footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid #f0d7e1}
-    .footmark{height:22px;vertical-align:middle;opacity:.9;margin-right:6px}
-
-    /* ===== Scroll reveal ===== */
-    .reveal{opacity:0; transform:translateY(10px); filter:saturate(.9); transition:opacity .6s ease, transform .6s ease, filter .6s ease}
-    .reveal.in{opacity:1; transform:none; filter:saturate(1)}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .nav-links{display:none}
-      .hamburger{display:block}
+    details.faq-item > summary::-webkit-details-marker { display: none; }
+    details.faq-item > summary::after {
+      content: "+"; font-family: var(--font-display);
+      font-size: 24px; font-weight: 400; color: var(--pink);
+      flex-shrink: 0; transition: transform 0.2s;
     }
-    @media (max-width:760px){
-      .container{padding:0 16px}
-      .nav{height:56px}
-      .brand-mark{height:28px}
-      .nav a{font-size:14px;padding:6px 8px}
-      .btn{padding:10px 16px}
-      .hero{padding:44px 0}
-      .hero h1{font-size:clamp(20px,7vw,30px);line-height:1.3}
-      .cta{display:inline-block;padding:14px 20px}
-      .subcta{display:block;margin:10px 0 0}
-      .profile{flex-direction:column;align-items:center}
-      .profile .pic{flex:0 0 auto;width:88%;max-width:380px;aspect-ratio:auto}
-      .profile .text{width:100%;font-size:16.5px;line-height:1.9}
-      .profile .text b{font-size:18px}
-      section{padding:40px 0}
-      .card{padding:18px}
-      #pricing .card .cta{width:100%;max-width:360px}
-    }
+    details.faq-item[open] > summary::after { transform: rotate(45deg); }
+    details.faq-item .faq-answer { padding: 0 0 22px; font-size: 14px; color: var(--muted); line-height: 1.9; }
 
-    /* 動きを抑えたい人向け */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none !important; transition:none !important}
+    /* ===== FOOTER ===== */
+    footer { background: var(--ink); padding: 40px 0; }
+    .footer-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo img { height: 26px; width: auto; filter: brightness(0) invert(1); opacity: 0.5; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image { order: -1; }
+      .hero-image img { aspect-ratio: 3/2; border-radius: 4px 16px 4px 16px; }
+      .hero-badge { bottom: -12px; left: 12px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-image img { aspect-ratio: 3/2; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .origin-card { padding: 28px 24px; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 56px 0; }
+      .hero { padding: 48px 0 56px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .pricing-card { padding: 32px 20px; }
+      .pricing-amount { font-size: 44px; }
+      .mobile-panel { inset: 56px 0 auto; }
+      .nav { height: 56px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-<header class="site-header" role="banner">
-  <div class="container nav reveal">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav">
     <a href="#" class="brand" aria-label="Lotus Essence Academy">
-      <img src="logo_1.png" alt="Lotus Essence Academy" class="brand-mark">
+      <img src="logo_1.png" alt="Lotus Essence Academy">
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#about">概要</a>
-      <a href="#features">特徴</a>
+      <a href="#about">講師紹介</a>
+      <a href="#features">コンテンツ</a>
       <a href="#pricing">料金</a>
-      <a href="#origin">由来</a>
       <a href="#faq">FAQ</a>
-      <a class="btn glow" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
+      <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
     </nav>
     <button class="hamburger" aria-label="メニューを開閉" aria-controls="mobileMenu" aria-expanded="false"><span></span></button>
   </div>
-
-  <!-- SPメニュー -->
-  <div id="mobileMenu" class="mobile-panel" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
-    <div class="container">
-      <div class="mobile-links">
-        <strong id="mobileMenuTitle" style="padding:4px 2px;color:var(--brand-ink)">メニュー</strong>
-        <a href="#about">概要</a>
-        <a href="#features">特徴</a>
-        <a href="#pricing">料金</a>
-        <a href="#origin">由来</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
-      </div>
+  <div id="mobileMenu" class="mobile-panel" role="dialog" aria-modal="true">
+    <div class="container mobile-links">
+      <a href="#about">講師紹介</a>
+      <a href="#features">コンテンツ</a>
+      <a href="#pricing">料金</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
     </div>
   </div>
 </header>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid reveal">
-    <div>
-      <h1>私を変えたのは、“在り方”。<br>ここでしか学べない“在り方”がある。</h1>
-      <p>ドテラ <b>最年少ダブルダイヤモンド 山﨑恵理香</b>が、マインドと在り方を毎月配信。<br>月1回のZoom配信＋アーカイブ視聴で継続的に学べます。</p>
-      <p>
-        <a class="cta" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
-        <a class="subcta" href="#about">まずは概要を見る →</a>
-      </p>
-    </div>
-    <div class="pic">
-      <img src="erika1.jpg" alt="山﨑恵理香の写真" loading="lazy" />
-      <span class="petal"><img src="logo_2.png" alt="Lotus ロゴ"></span>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="container reveal">
-    <h2>講師紹介</h2>
-    <div class="card profile">
-      <div class="pic"><img src="erika2.jpg" alt="講師：山﨑恵理香" loading="lazy" /></div>
-      <div class="text">
-        <p><b>山﨑恵理香（ドテラ 最年少ダブルダイヤモンド）</b></p>
-        <p>「等身大の学びを実装する」をテーマに、Zoomライブとアーカイブ、質問ボックスを通じて前進をサポートします。参加直後から、過去アーカイブを<b>一部制限付き</b>で視聴可能。</p>
-        <p><a class="cta" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a></p>
+  <div class="container">
+    <div class="hero-inner reveal">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Lotus Essence Academy</p>
+        <h1>私を変えたのは、<em>"在り方"</em>。<br>ここでしか学べない<br>"在り方"がある。</h1>
+        <p class="hero-desc">
+          ドテラ <strong>最年少ダブルダイヤモンド 山﨑恵理香</strong>が、マインドと在り方を毎月配信。<br>
+          月1回のZoom配信＋アーカイブ視聴で、継続的に学びを深められます。
+        </p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
+          <a class="btn-ghost" href="#about">まずは詳しく見る</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="erika1.jpg" alt="山﨑恵理香">
+        <div class="hero-badge">
+          <div class="hero-badge-label">Monthly Fee</div>
+          <div class="hero-badge-value">¥5,500<span style="font-size:14px;font-family:var(--font-body);font-weight:400"> 税込</span></div>
+          <div class="hero-badge-sub">入会金なし</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Origin -->
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="erika2.jpg" alt="講師：山﨑恵理香">
+      </div>
+      <div class="about-text reveal">
+        <span class="section-label">Instructor</span>
+        <h2 class="section-title">山﨑恵理香</h2>
+        <div class="divider"></div>
+        <div class="about-meta">
+          <span class="tag tag-pink">ドテラ最年少ダブルダイヤモンド</span>
+          <span class="tag tag-blue">ウェルネスアドバイザー</span>
+        </div>
+        <p>「等身大の学びを実装する」をテーマに、Zoomライブとアーカイブ、質問ボックスを通じて前進をサポートします。</p>
+        <p>予防医学・自然療法・メディカルアロマを軸に、女性の自立と在り方を学ぶコミュニティを運営。参加直後から過去アーカイブを視聴可能です。</p>
+        <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener" style="margin-top:24px">今すぐ参加する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
 <section id="origin">
-  <div class="container reveal">
-    <h2>名称の由来</h2>
-    <div class="card">
-      <p>
-        <b>Lotus Essence Academy</b> は、旧称 <b>「I’m Me（ウェルネスアドバイザー養成スクール）」</b> を母体として誕生しました。<br>
-        I’m Me では、女性の自立支援を目的に <b>予防医学 × 自然療法 × メディカルアロマ</b> を軸に学びを提供してきました。
-      </p>
-      <p>
-        その実践知をより多くの人に、より継続的に届けるために
-        名称と構成を刷新し、気軽に参加できる<b>アカデミー形式</b>へと進化しました。
-      </p>
+  <div class="container">
+    <span class="section-label reveal">Our Story</span>
+    <h2 class="section-title reveal">名称の由来</h2>
+    <div class="divider reveal"></div>
+    <div class="origin-card reveal">
+      <p><strong>Lotus Essence Academy</strong> は、旧称「I'm Me（ウェルネスアドバイザー養成スクール）」を母体として誕生しました。</p>
+      <p>I'm Me では、女性の自立支援を目的に予防医学・自然療法・メディカルアロマを軸に学びを提供してきました。その実践知をより多くの人に、より継続的に届けるために名称と構成を刷新。気軽に参加できるアカデミー形式へと進化しました。</p>
     </div>
   </div>
 </section>
 
-<!-- Features -->
+<!-- FEATURES -->
 <section id="features">
-  <div class="container reveal">
-    <h2>特徴</h2>
-    <div class="card"><h3>月1回のZoom配信</h3><p class="muted">ライブの学びはアーカイブに追加されます。不定期開催。</p></div>
-    <div class="card"><h3>アーカイブ視聴</h3><p class="muted">参加直後から過去動画を制限付きで見られます。入会時期により視聴範囲が異なります。</p></div>
-    <div class="card"><h3>質問ボックス</h3><p class="muted">自由に質問OK。全回答は保証しませんが、テーマを選んで不定期に回答します。</p></div>
-  </div>
-</section>
-<!-- Testimonials -->
-<section id="testimonials">
-  <div class="container reveal">
-    <h2>参加者の声</h2>
-    <div class="card" style="text-align:center; padding:60px 20px; opacity:.7">
-      <p style="font-size:18px; font-weight:600; color:var(--muted)">✨ Coming Soon ✨</p>
-      <p class="muted">現在準備中です。参加者のリアルな声をお届けします。</p>
+  <div class="container">
+    <span class="section-label reveal">What You Get</span>
+    <h2 class="section-title reveal">コンテンツ</h2>
+    <div class="divider reveal"></div>
+    <div class="features-grid">
+      <div class="feature-item reveal">
+        <span class="feature-num">01</span>
+        <h3>月1回のZoom配信</h3>
+        <p>ライブで恵理香と繋がる月1回の配信。学びはそのままアーカイブに追加されます。</p>
+      </div>
+      <div class="feature-item reveal">
+        <span class="feature-num">02</span>
+        <h3>アーカイブ視聴</h3>
+        <p>参加直後から過去動画を視聴可能。入会時期により視聴範囲が異なります。</p>
+      </div>
+      <div class="feature-item reveal">
+        <span class="feature-num">03</span>
+        <h3>質問ボックス</h3>
+        <p>自由に質問OK。テーマを選んで不定期に回答します。</p>
+      </div>
+      <div class="feature-item reveal">
+        <span class="feature-num">04</span>
+        <span class="tag tag-blue feature-badge">有料オプション</span>
+        <h3>パーソナルコーチング</h3>
+        <p>メンバー優先でご案内。個別の状況に合わせた1対1のサポートを受けられます。</p>
+      </div>
+      <div class="feature-item reveal">
+        <span class="feature-num">05</span>
+        <h3>オフ会</h3>
+        <p>年1〜2回、リアルで集まる機会を開催。メンバー同士のつながりを大切にしています。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Zoom Digest -->
-<section id="digest">
-  <div class="container reveal">
-    <h2>Zoom ダイジェスト</h2>
-    <div class="card" style="text-align:center; padding:60px 20px; opacity:.7">
-      <p style="font-size:18px; font-weight:600; color:var(--muted)">🎥 Coming Soon 🎥</p>
-      <p class="muted">過去のZoom配信の一部をショート版で公開予定です。</p>
-    </div>
-  </div>
-</section>
-<!-- Pricing -->
+<!-- PRICING -->
 <section id="pricing">
-  <div class="container reveal">
-    <h2>料金</h2>
-    <div class="card" style="text-align:center">
-      <h3>月額料金</h3>
-      <p><b>5,500円（税込）</b></p>
-      <p class="muted">入会金なし・初月から課金開始<br>決済方法：クレジットカード／口座振替（会費ペイ）</p>
-      <a class="cta" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
+  <div class="container">
+    <span class="section-label reveal" style="display:block;text-align:center">Pricing</span>
+    <h2 class="section-title reveal" style="text-align:center">料金</h2>
+    <div class="divider reveal" style="margin-left:auto;margin-right:auto"></div>
+    <div class="pricing-card reveal">
+      <p style="font-size:12px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase">Monthly</p>
+      <div class="pricing-amount">¥5,500</div>
+      <p class="pricing-unit">/ 月（税込）</p>
+      <p class="pricing-note">入会金なし・初月から課金開始<br>クレジットカード・口座振替（会費ペイ）対応</p>
+      <ul class="pricing-features">
+        <li>月1回Zoom配信（アーカイブ追加）</li>
+        <li>過去アーカイブ視聴</li>
+        <li>質問ボックス</li>
+        <li>オフ会優先参加</li>
+        <li>パーソナルコーチング優先案内（有料）</li>
+      </ul>
+      <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener" style="width:100%;padding:16px;font-size:15px">今すぐ参加する</a>
     </div>
   </div>
 </section>
 
-<!-- FAQ（detailsで開閉） -->
+<!-- FAQ -->
 <section id="faq">
-  <div class="container reveal">
-    <h2>よくある質問</h2>
-    <details class="card">
-      <summary>Q. 質問は必ず回答されますか？</summary>
-      <p class="muted">すべての質問への回答はお約束できません。テーマを選定し、不定期にお答えします。</p>
-    </details>
-    <details class="card">
-      <summary>Q. アーカイブはどのくらい見られますか？</summary>
-      <p class="muted">公開範囲・期間は運営ポリシーに準じます。参加期間に応じて視聴範囲が変わる場合があります。</p>
-    </details>
-    <details class="card">
-      <summary>Q. 退会はできますか？</summary>
-      <p class="muted">退会はいつでも可能です。ただし、処理の都合上、<b>毎月20日までに所定フォームから申請</b>いただいた場合のみ翌月以降の課金を停止できます。退会フォームは申込み完了メールに記載されています。</p>
-    </details>
+  <div class="container">
+    <span class="section-label reveal">FAQ</span>
+    <h2 class="section-title reveal">よくある質問</h2>
+    <div class="divider reveal"></div>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>Q. 質問は必ず回答されますか？</summary>
+        <p class="faq-answer">すべての質問への回答はお約束できません。テーマを選定し、不定期にお答えします。</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Q. アーカイブはどのくらい見られますか？</summary>
+        <p class="faq-answer">公開範囲・期間は運営ポリシーに準じます。参加期間に応じて視聴範囲が変わる場合があります。</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Q. 退会はできますか？</summary>
+        <p class="faq-answer">退会はいつでも可能です。毎月20日までに所定フォームから申請いただいた場合のみ、翌月以降の課金を停止できます。退会フォームは申込み完了メールに記載されています。</p>
+      </details>
+    </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="container reveal">
-    <img src="logo_2.png" alt="Lotus ロゴ" class="footmark">
-    <small>&copy; 2025 Lotus Essence Academy</small>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <img src="logo_1.png" alt="Lotus Essence Academy">
+    </div>
+    <p class="footer-copy">&copy; 2025 Lotus Essence Academy</p>
   </div>
 </footer>
 
 <script>
-  // Hamburger toggle
   const btn = document.querySelector('.hamburger');
   const panel = document.getElementById('mobileMenu');
   if (btn) {
@@ -340,19 +508,19 @@
   }
   panel?.addEventListener('click', e => {
     if (e.target.tagName === 'A') {
-      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-expanded', 'false');
       panel.classList.remove('open');
       document.body.style.overflow = '';
     }
   });
 
-  // Scroll reveal
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(ent=>{
-      if(ent.isIntersecting){ ent.target.classList.add('in'); io.unobserve(ent.target); }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(ent => {
+      if (ent.isIntersecting) { ent.target.classList.add('in'); io.unobserve(ent.target); }
     });
-  },{threshold:0.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>
