@@ -2,38 +2,39 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Lotus Essence Academy｜山﨑恵理香のオンラインアカデミー</title>
+  <title>LEA｜Life × Alignment ― 調律コーチング ― 山﨑恵理香</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ドテラ最年少ダブルダイヤモンド 山﨑恵理香によるオンラインアカデミー。月1回のZoom配信＋アーカイブ視聴、パーソナルコーチングで学びを深める『Lotus Essence Academy』。">
+  <meta name="description" content="LEA — Life × Alignment。自分を整え、人生の軸を取り戻す。ドテラ最年少ダブルダイヤモンド 山﨑恵理香による調律コーチング・オンラインアカデミー。">
   <link rel="canonical" href="https://lotusessence-academy.github.io/LotusEssence_Academy/">
   <link rel="icon" href="logo_2.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Lotus Essence Academy｜山﨑恵理香のオンラインアカデミー">
-  <meta property="og:description" content="月1回のZoom配信＋アーカイブ視聴で継続的に学べるオンラインアカデミー。">
+  <meta property="og:title" content="LEA｜Life × Alignment ― 調律コーチング">
+  <meta property="og:description" content="自分を整え、人生の軸を取り戻す。山﨑恵理香による調律コーチング・オンラインアカデミー。">
   <meta property="og:url" content="https://lotusessence-academy.github.io/LotusEssence_Academy/">
-  <meta property="og:image" content="erika1.jpg">
+  <meta property="og:image" content="erika_main.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root {
-      --bg:          #fdf5f8;
-      --bg2:         #f7ecf2;
-      --white:       #ffffff;
-      --ink:         #1c0f18;
-      --muted:       #8a6878;
-      --border:      #e8d0dc;
-      --pink:        #b85d7a;
-      --pink-light:  #f0c8d8;
-      --pink-dark:   #7a3050;
-      --blue:        #6888b0;
-      --blue-light:  #c8d8ec;
-      --blue-pale:   #eef3f9;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --bg:           #fdf3f5;
+      --bg-soft:      #fae8ee;
+      --bg-deep:      #f5d8e2;
+      --white:        #ffffff;
+      --ink:          #2d1820;
+      --ink-soft:     #5a3a48;
+      --muted:        #8a6878;
+      --border:       #f0d8e0;
+      --rose:         #c98899;
+      --rose-dark:    #8e5567;
+      --rose-light:   #e8b8c8;
+      --gold:         #c4a47a;
+      --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
       --font-body:    'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-      --container:   1080px;
+      --container:    1140px;
+      --ease:         cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,40 +43,45 @@
       font-family: var(--font-body);
       color: var(--ink);
       background: var(--bg);
-      line-height: 1.8;
+      line-height: 1.85;
+      font-weight: 400;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; height: auto; display: block; }
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 28px; }
 
-    /* ===== HEADER ===== */
+    /* ========== HEADER ========== */
     .site-header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(253,245,248,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(253, 243, 245, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(240, 216, 224, 0.5);
     }
     .nav {
       display: flex; align-items: center;
       justify-content: space-between;
-      height: 64px; gap: 16px;
+      height: 72px; gap: 16px;
     }
-    .brand img { height: 32px; width: auto; }
-    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .brand img { height: 34px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
     .nav-links a {
-      padding: 8px 14px; font-size: 13px; font-weight: 500;
-      color: var(--muted); border-radius: 8px;
-      transition: color 0.2s, background 0.2s; letter-spacing: 0.04em;
+      padding: 8px 16px; font-size: 12.5px; font-weight: 500;
+      color: var(--ink-soft); border-radius: 999px;
+      letter-spacing: 0.06em;
+      transition: color 0.25s var(--ease), background 0.25s var(--ease);
     }
-    .nav-links a:hover { color: var(--ink); background: var(--bg2); }
+    .nav-links a:hover { color: var(--rose-dark); background: var(--bg-soft); }
     .btn-primary {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 10px 22px; background: var(--pink-dark); color: #fff;
-      border-radius: 999px; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.06em; transition: background 0.2s, transform 0.15s;
+      padding: 12px 26px; background: var(--rose-dark); color: #fff;
+      border-radius: 999px; font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.1em; cursor: pointer; border: none;
+      transition: background 0.25s var(--ease), transform 0.2s var(--ease), box-shadow 0.25s var(--ease);
     }
-    .btn-primary:hover { background: var(--pink); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--rose); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(142,85,103,0.2); }
 
     /* Hamburger */
     .hamburger {
@@ -85,8 +91,8 @@
     }
     .hamburger span, .hamburger::before, .hamburger::after {
       content: ""; position: absolute; left: 8px; right: 8px;
-      height: 1.5px; background: var(--pink-dark);
-      transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease, bottom 0.25s ease;
+      height: 1.5px; background: var(--rose-dark);
+      transition: transform 0.28s var(--ease), opacity 0.2s var(--ease), top 0.28s var(--ease), bottom 0.28s var(--ease);
     }
     .hamburger span { top: 20px; }
     .hamburger::before { top: 13px; }
@@ -96,230 +102,604 @@
     .hamburger[aria-expanded="true"]::after { bottom: 20px; transform: rotate(-45deg); }
 
     .mobile-panel {
-      display: none; position: fixed; inset: 64px 0 auto; z-index: 90;
-      background: rgba(253,245,248,0.98);
+      display: none; position: fixed; inset: 72px 0 auto; z-index: 90;
+      background: rgba(253,243,245,0.98);
       border-top: 1px solid var(--border);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      box-shadow: 0 16px 32px rgba(142,85,103,0.06);
     }
-    .mobile-panel.open { display: block; animation: slideDown 0.18s ease; }
+    .mobile-panel.open { display: block; animation: slideDown 0.22s var(--ease); }
     @keyframes slideDown {
       from { transform: translateY(-8px); opacity: 0; }
       to   { transform: translateY(0);    opacity: 1; }
     }
-    .mobile-links { display: grid; gap: 4px; padding: 16px 24px; }
-    .mobile-links a { padding: 12px 8px; color: var(--muted); border-radius: 8px; font-size: 15px; }
-    .mobile-links a:hover { background: var(--bg2); color: var(--ink); }
+    .mobile-links { display: grid; gap: 4px; padding: 20px 28px; }
+    .mobile-links a { padding: 14px 8px; color: var(--ink-soft); border-radius: 8px; font-size: 15px; }
+    .mobile-links a:hover { background: var(--bg-soft); color: var(--rose-dark); }
 
-    /* ===== HERO ===== */
-    .hero { padding: 72px 0 80px; }
-    .hero-inner {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 56px; align-items: center;
-    }
-    .hero-eyebrow {
-      font-family: var(--font-display); font-size: 13px;
-      letter-spacing: 0.2em; color: var(--pink);
-      text-transform: uppercase; margin-bottom: 16px;
-    }
-    .hero h1 {
+    /* ========== COMMON ========== */
+    section { padding: 120px 0; position: relative; }
+    .eyebrow {
       font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1.3; color: var(--ink);
-      font-weight: 600; margin-bottom: 20px; letter-spacing: 0.02em;
-    }
-    .hero h1 em { font-style: italic; color: var(--pink); }
-    .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 32px; }
-    .hero-ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .btn-ghost {
-      font-size: 13px; color: var(--pink-dark); font-weight: 600;
-      letter-spacing: 0.04em; display: inline-flex; align-items: center;
-      transition: color 0.2s;
-    }
-    .btn-ghost::after { content: " →"; margin-left: 2px; }
-    .btn-ghost:hover { color: var(--pink); }
-    .hero-image { position: relative; }
-    .hero-image img {
-      width: 100%; aspect-ratio: 4/5; object-fit: cover;
-      border-radius: 4px 28px 4px 28px;
-      box-shadow: 0 20px 60px rgba(100,40,60,0.12);
-    }
-    .hero-badge {
-      position: absolute; bottom: -16px; left: -16px;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 16px; padding: 14px 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-    .hero-badge-label {
-      font-size: 11px; color: var(--muted);
-      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;
-    }
-    .hero-badge-value {
-      font-family: var(--font-display); font-size: 22px;
-      font-weight: 600; color: var(--ink); line-height: 1.2;
-    }
-    .hero-badge-sub { font-size: 11px; color: var(--muted); }
-
-    /* ===== SECTION COMMONS ===== */
-    section { padding: 80px 0; }
-    .section-label {
-      font-family: var(--font-display); font-size: 12px;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--blue); margin-bottom: 10px; display: block;
+      font-size: 11.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 18px;
     }
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 600; color: var(--ink); line-height: 1.25;
+      font-weight: 500;
+      font-size: clamp(28px, 3.8vw, 44px);
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      color: var(--ink);
     }
-    .divider {
-      width: 40px; height: 2px;
-      background: linear-gradient(90deg, var(--pink), var(--blue));
-      margin: 16px 0 40px; border-radius: 2px;
+    .section-lede {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 2.05;
+      margin-top: 24px;
+      max-width: 640px;
     }
+    .divider-line {
+      width: 32px; height: 1px;
+      background: var(--rose);
+      margin: 22px 0;
+    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 80px 0 100px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(232,184,200,0.35), transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(245,216,226,0.5), transparent 60%),
+        var(--bg);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-image-wrap {
+      position: relative;
+    }
+    .hero-image {
+      aspect-ratio: 4/5;
+      background-image: url('erika_seated.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      border-radius: 2px 80px 2px 80px;
+      box-shadow: 0 30px 80px rgba(142,85,103,0.18);
+    }
+    .hero-image-accent {
+      position: absolute;
+      top: -28px; left: -28px;
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, #f8e2ea, #ecc1d2 60%, #d49ab0 100%);
+      opacity: 0.65;
+      filter: blur(4px);
+      z-index: -1;
+    }
+    .hero-text { padding-left: 8px; }
+    .hero-mark {
+      font-family: var(--font-display);
+      font-size: clamp(70px, 11vw, 130px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: 0.08em;
+      color: var(--rose-dark);
+      margin-bottom: 6px;
+    }
+    .hero-mark-sub {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(15px, 1.6vw, 19px);
+      letter-spacing: 0.18em;
+      color: var(--rose);
+      margin-bottom: 36px;
+    }
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.7;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+    .hero-tagline em { font-style: italic; color: var(--rose-dark); font-weight: 400; }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .hero-method {
+      font-family: var(--font-display);
+      font-size: 15px;
+      letter-spacing: 0.4em;
+      color: var(--rose-dark);
+      margin: 28px 0 36px;
+    }
+    .hero-method::before, .hero-method::after { content: "―"; margin: 0 10px; opacity: 0.6; }
+    .hero-ctas { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .btn-ghost {
+      font-size: 12.5px;
+      color: var(--rose-dark);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      transition: color 0.25s var(--ease);
+    }
+    .btn-ghost::after { content: " →"; transition: transform 0.25s var(--ease); display: inline-block; margin-left: 4px; }
+    .btn-ghost:hover { color: var(--rose); }
+    .btn-ghost:hover::after { transform: translateX(4px); }
+
+    /* ========== CONCEPT ========== */
+    #concept {
+      background: var(--white);
+      padding: 140px 0;
+    }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+    .concept-image {
+      aspect-ratio: 3/4;
+      background-image: url('erika_main.jpg');
+      background-size: 110%;
+      background-position: center 20%;
+      border-radius: 80px 2px 80px 2px;
+      box-shadow: 0 24px 60px rgba(142,85,103,0.14);
+    }
+    .concept-text { max-width: 520px; }
+    .concept-quote {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.6vw, 32px);
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--ink);
+      letter-spacing: 0.03em;
+      margin-bottom: 32px;
+    }
+    .concept-quote em { font-style: italic; color: var(--rose-dark); }
+    .concept-body p {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 2.05;
+      margin-bottom: 14px;
+    }
+
+    /* ========== PROMISES ========== */
+    #promises {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    }
+    .promises-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .promise-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px 32px 4px 32px;
+      padding: 36px 32px;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .promise-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(142,85,103,0.1);
+    }
+    .promise-num {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 400;
+      color: var(--rose-light);
+      line-height: 1;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .promise-item h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+    .promise-item p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.95;
+    }
+
+    /* ========== METHOD ========== */
+    #method {
+      background: var(--white);
+    }
+    .method-head { text-align: center; max-width: 760px; margin: 0 auto 80px; }
+    .method-head .section-lede { margin-left: auto; margin-right: auto; }
+    .method-head .divider-line { margin: 22px auto; }
+    .method-icons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .method-icon-item {
+      text-align: center;
+      padding: 0 16px;
+    }
+    .method-icon-circle {
+      width: 96px; height: 96px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--bg-soft) 0%, var(--bg-deep) 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.6), 0 12px 28px rgba(142,85,103,0.12);
+    }
+    .method-icon-circle svg { width: 38px; height: 38px; stroke: var(--rose-dark); fill: none; stroke-width: 1.4; }
+    .method-icon-item h4 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      line-height: 1.6;
+    }
+
+    /* ========== INSTRUCTOR ========== */
+    #instructor {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(245,216,226,0.5), transparent 50%),
+        var(--bg);
+    }
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .instructor-image {
+      aspect-ratio: 4/5;
+      background-image: url('erika_soft.jpg');
+      background-size: cover;
+      background-position: center 25%;
+      border-radius: 2px 60px 2px 60px;
+      box-shadow: 0 24px 60px rgba(142,85,103,0.16);
+    }
+    .instructor-text { max-width: 540px; }
+    .instructor-name {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4.5vw, 52px);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+      margin: 8px 0 6px;
+      letter-spacing: 0.04em;
+    }
+    .instructor-name-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--rose);
+      letter-spacing: 0.16em;
+      margin-bottom: 22px;
+    }
+    .instructor-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 24px; }
     .tag {
-      display: inline-block; padding: 4px 12px;
-      border-radius: 999px; font-size: 12px;
-      font-weight: 700; letter-spacing: 0.04em;
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      background: var(--bg-soft);
+      color: var(--rose-dark);
+      border: 1px solid var(--border);
     }
-    .tag-pink { background: var(--pink-light); color: var(--pink-dark); }
-    .tag-blue { background: var(--blue-pale); color: var(--blue); }
+    .instructor-bio p {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 2.05;
+      margin-bottom: 14px;
+    }
 
-    /* ===== ABOUT ===== */
-    #about { background: var(--white); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: center;
+    /* ========== VALUES ========== */
+    #values {
+      background: var(--white);
+      padding: 130px 0;
     }
-    .about-image img {
-      width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top;
-      border-radius: 4px 20px 4px 20px;
-      box-shadow: 0 16px 48px rgba(100,40,60,0.1);
+    .values-head { text-align: center; margin-bottom: 70px; }
+    .values-head .divider-line { margin: 22px auto; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      max-width: 920px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
     }
-    .about-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 12px; }
+    .value-item {
+      padding: 38px 36px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .value-mark {
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      color: var(--rose);
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+    .value-text {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
 
-    /* ===== ORIGIN ===== */
-    #origin { background: var(--bg); }
-    .origin-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 20px; padding: 40px 48px; max-width: 760px;
+    /* ========== FEATURES (KEEP from original, restyled) ========== */
+    #features {
+      background:
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
     }
-    .origin-card p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 12px; }
-    .origin-card p:last-child { margin-bottom: 0; }
-
-    /* ===== FEATURES ===== */
-    #features { background: var(--bg2); }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .features-head { margin-bottom: 56px; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
     .feature-item {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 16px; padding: 32px 24px; position: relative;
-      transition: box-shadow 0.2s;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px 24px 4px 24px;
+      padding: 32px 28px;
+      position: relative;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
     }
-    .feature-item:hover { box-shadow: 0 12px 32px rgba(100,40,60,0.08); }
+    .feature-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(142,85,103,0.1);
+    }
     .feature-num {
-      font-family: var(--font-display); font-size: 52px; font-weight: 400;
-      color: var(--pink-light); line-height: 1; margin-bottom: 14px; display: block;
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 400;
+      color: var(--rose-light);
+      line-height: 1;
+      display: block;
+      margin-bottom: 14px;
     }
-    .feature-item h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
-    .feature-item p { font-size: 14px; color: var(--muted); line-height: 1.8; }
-    .feature-badge { position: absolute; top: 16px; right: 16px; font-size: 11px; padding: 3px 10px; }
+    .feature-item h3 { font-size: 15.5px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: 0.03em; }
+    .feature-item p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.95; }
+    .feature-badge {
+      position: absolute; top: 14px; right: 14px;
+      font-size: 10.5px; padding: 3px 10px;
+      background: var(--rose-light); color: var(--rose-dark);
+      border-radius: 999px; font-weight: 700; letter-spacing: 0.04em;
+    }
 
-    /* ===== PRICING ===== */
-    #pricing { background: var(--white); }
+    /* ========== PRICING ========== */
+    #pricing {
+      background: var(--white);
+    }
+    .pricing-head { text-align: center; margin-bottom: 56px; }
+    .pricing-head .divider-line { margin: 22px auto; }
     .pricing-card {
-      max-width: 480px; margin: 0 auto;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 24px; padding: 48px 40px; text-align: center;
+      max-width: 460px;
+      margin: 0 auto;
+      background:
+        linear-gradient(160deg, var(--bg) 0%, var(--bg-soft) 100%);
+      border: 1px solid var(--border);
+      border-radius: 4px 40px 4px 40px;
+      padding: 56px 48px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(142,85,103,0.08);
+    }
+    .pricing-label {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: var(--rose);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 18px;
     }
     .pricing-amount {
-      font-family: var(--font-display); font-size: 56px;
-      font-weight: 600; color: var(--ink); line-height: 1; margin: 14px 0 4px;
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+      margin: 8px 0 6px;
+      letter-spacing: 0.02em;
     }
-    .pricing-unit { font-size: 16px; color: var(--muted); }
-    .pricing-note { font-size: 13px; color: var(--muted); margin: 12px 0 32px; line-height: 1.7; }
-    .pricing-features { list-style: none; margin-bottom: 32px; text-align: left; }
+    .pricing-amount .yen { font-size: 32px; vertical-align: 0.16em; margin-right: 2px; color: var(--rose-dark); }
+    .pricing-unit { font-size: 14px; color: var(--ink-soft); }
+    .pricing-note { font-size: 12.5px; color: var(--muted); margin: 16px 0 28px; line-height: 1.85; }
+    .pricing-features {
+      list-style: none;
+      margin: 28px 0 32px;
+      text-align: left;
+    }
     .pricing-features li {
-      padding: 10px 0; border-bottom: 1px solid var(--border);
-      font-size: 14px; color: var(--muted);
-      display: flex; align-items: center; gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
+    .pricing-features li:last-child { border-bottom: none; }
     .pricing-features li::before {
-      content: ""; display: inline-block;
-      width: 6px; height: 6px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink), var(--blue));
+      content: "";
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--rose);
       flex-shrink: 0;
     }
 
-    /* ===== FAQ ===== */
-    #faq { background: var(--bg); }
-    .faq-list { max-width: 720px; }
+    /* ========== ORIGIN (compressed) ========== */
+    #origin {
+      background: var(--bg);
+    }
+    .origin-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px 28px 4px 28px;
+      padding: 44px 52px;
+      max-width: 760px;
+      margin-top: 40px;
+    }
+    .origin-card p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 2.05;
+      margin-bottom: 14px;
+    }
+    .origin-card p:last-child { margin-bottom: 0; }
+    .origin-card strong { color: var(--rose-dark); font-weight: 700; }
+
+    /* ========== FAQ ========== */
+    #faq {
+      background: var(--white);
+    }
+    .faq-list { max-width: 760px; }
     details.faq-item { border-bottom: 1px solid var(--border); }
     details.faq-item:first-child { border-top: 1px solid var(--border); }
     details.faq-item > summary {
       list-style: none; cursor: pointer;
-      padding: 22px 0; font-weight: 700; font-size: 15px; color: var(--ink);
+      padding: 26px 4px;
+      font-weight: 700; font-size: 15px; color: var(--ink);
       display: flex; justify-content: space-between;
-      align-items: center; gap: 16px; outline: none; user-select: none;
+      align-items: center; gap: 16px; outline: none;
+      letter-spacing: 0.02em;
     }
     details.faq-item > summary::-webkit-details-marker { display: none; }
     details.faq-item > summary::after {
-      content: "+"; font-family: var(--font-display);
-      font-size: 24px; font-weight: 400; color: var(--pink);
-      flex-shrink: 0; transition: transform 0.2s;
+      content: "+";
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--rose);
+      flex-shrink: 0;
+      transition: transform 0.3s var(--ease);
     }
     details.faq-item[open] > summary::after { transform: rotate(45deg); }
-    details.faq-item .faq-answer { padding: 0 0 22px; font-size: 14px; color: var(--muted); line-height: 1.9; }
+    details.faq-item .faq-answer {
+      padding: 0 4px 24px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 2;
+    }
 
-    /* ===== FOOTER ===== */
-    footer { background: var(--ink); padding: 40px 0; }
+    /* ========== FINAL CTA ========== */
+    #final-cta {
+      padding: 100px 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(232,184,200,0.4), transparent 70%),
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+      text-align: center;
+    }
+    .final-cta-text {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      letter-spacing: 0.04em;
+    }
+    .final-cta-text em { font-style: italic; color: var(--rose-dark); }
+    .btn-primary.large {
+      padding: 16px 40px;
+      font-size: 13.5px;
+      letter-spacing: 0.14em;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--ink);
+      padding: 50px 0;
+    }
     .footer-inner {
       display: flex; align-items: center;
       justify-content: space-between; flex-wrap: wrap; gap: 16px;
     }
-    .footer-logo img { height: 26px; width: auto; filter: brightness(0) invert(1); opacity: 0.5; }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+    .footer-logo img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.55; }
+    .footer-copy {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+    }
 
-    /* ===== SCROLL REVEAL ===== */
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 960px) {
+      section { padding: 80px 0; }
       .nav-links { display: none; }
       .hamburger { display: block; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-image { order: -1; }
-      .hero-image img { aspect-ratio: 3/2; border-radius: 4px 16px 4px 16px; }
-      .hero-badge { bottom: -12px; left: 12px; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-image img { aspect-ratio: 3/2; }
+      .hero { padding: 56px 0 72px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-image-wrap { order: -1; max-width: 380px; margin: 0 auto; }
+      .hero-text { padding-left: 0; text-align: center; }
+      .hero-ctas { justify-content: center; }
+      .concept-grid, .instructor-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .concept-image, .instructor-image { max-width: 380px; margin: 0 auto; }
+      .promises-grid { grid-template-columns: 1fr; gap: 16px; }
+      .method-icons { grid-template-columns: 1fr; gap: 36px; }
       .features-grid { grid-template-columns: 1fr 1fr; }
-      .origin-card { padding: 28px 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .origin-card { padding: 32px 28px; }
+      .pricing-card { padding: 40px 28px; }
+      .nav { height: 64px; }
+      .mobile-panel { inset: 64px 0 auto; }
     }
     @media (max-width: 600px) {
-      section { padding: 56px 0; }
-      .hero { padding: 48px 0 56px; }
+      section { padding: 64px 0; }
       .features-grid { grid-template-columns: 1fr; }
-      .pricing-card { padding: 32px 20px; }
-      .pricing-amount { font-size: 44px; }
-      .mobile-panel { inset: 56px 0 auto; }
-      .nav { height: 56px; }
+      .pricing-amount { font-size: 52px; }
+      .pricing-amount .yen { font-size: 26px; }
+      .container { padding: 0 20px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ========== HEADER ========== -->
 <header class="site-header">
   <div class="container nav">
-    <a href="#" class="brand" aria-label="Lotus Essence Academy">
-      <img src="logo_1.png" alt="Lotus Essence Academy">
+    <a href="#" class="brand" aria-label="LEA - Lotus Essence Academy">
+      <img src="logo_1.png" alt="LEA - Lotus Essence Academy">
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#about">講師紹介</a>
+      <a href="#concept">コンセプト</a>
+      <a href="#method">調律コーチング</a>
+      <a href="#instructor">講師紹介</a>
       <a href="#features">コンテンツ</a>
       <a href="#pricing">料金</a>
       <a href="#faq">FAQ</a>
@@ -329,7 +709,9 @@
   </div>
   <div id="mobileMenu" class="mobile-panel" role="dialog" aria-modal="true">
     <div class="container mobile-links">
-      <a href="#about">講師紹介</a>
+      <a href="#concept">コンセプト</a>
+      <a href="#method">調律コーチング</a>
+      <a href="#instructor">講師紹介</a>
       <a href="#features">コンテンツ</a>
       <a href="#pricing">料金</a>
       <a href="#faq">FAQ</a>
@@ -338,81 +720,179 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ========== HERO ========== -->
 <section class="hero">
   <div class="container">
-    <div class="hero-inner reveal">
+    <div class="hero-grid reveal">
+      <div class="hero-image-wrap">
+        <div class="hero-image-accent"></div>
+        <div class="hero-image" role="img" aria-label="山﨑恵理香"></div>
+      </div>
       <div class="hero-text">
-        <p class="hero-eyebrow">Lotus Essence Academy</p>
-        <h1>私を変えたのは、<br><em>"在り方"</em>。<br>ここでしか学べない<br><em>"在り方"</em>がある。</h1>
-        <p class="hero-desc">
-          ドテラ <strong>最年少ダブルダイヤモンド 山﨑恵理香</strong>が、マインドと在り方を毎月配信。<br>
-          月1回のZoom配信＋アーカイブ視聴で、継続的に学びを深められます。
-        </p>
+        <h1 class="hero-mark">LEA</h1>
+        <p class="hero-mark-sub">Life × Alignment</p>
+        <p class="hero-tagline">自分を整え、<br>人生の<em>軸</em>を取り戻す。</p>
+        <p class="hero-sub">しなやかに満たされて、私らしく生きる。</p>
+        <p class="hero-method">調律コーチング</p>
         <div class="hero-ctas">
           <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">今すぐ参加する</a>
-          <a class="btn-ghost" href="#about">まずは詳しく見る</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="erika1.jpg" alt="山﨑恵理香">
-        <div class="hero-badge">
-          <div class="hero-badge-label">Monthly Fee</div>
-          <div class="hero-badge-value">¥5,500<span style="font-size:14px;font-family:var(--font-body);font-weight:400"> 税込</span></div>
-          <div class="hero-badge-sub">入会金なし</div>
+          <a class="btn-ghost" href="#concept">コンセプトを読む</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- ========== CONCEPT ========== -->
+<section id="concept">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-image reveal">
-        <img src="erika2.jpg" alt="講師：山﨑恵理香">
-      </div>
-      <div class="about-text reveal">
-        <span class="section-label">Instructor</span>
-        <h2 class="section-title">山﨑恵理香</h2>
-        <div class="divider"></div>
-        <div class="about-meta">
-          <span class="tag tag-pink">ドテラ最年少ダブルダイヤモンド</span>
-          <span class="tag tag-blue">ウェルネスアドバイザー</span>
+    <div class="concept-grid">
+      <div class="concept-image reveal" role="img" aria-label="山﨑恵理香"></div>
+      <div class="concept-text reveal">
+        <span class="eyebrow">Concept</span>
+        <p class="concept-quote">「完璧」を脱ぎ捨てて、<br>頑張らなくても<br><em>満たされる</em>領域へ。</p>
+        <div class="concept-body">
+          <p>芯の強さをそのままに、しなやかに、生きる。</p>
+          <p>自己認識のズレを整え、判断軸を取り戻す。<br>無理に何かを足すのではなく、いま在るものを丁寧に見つめ直すこと。<br>そのプロセスが、あなたの人生を本来の姿に戻していきます。</p>
         </div>
-        <p>「等身大の学びを実装する」をテーマに、Zoomライブとアーカイブ、質問ボックスを通じて前進をサポートします。</p>
-        <p>予防医学・自然療法・メディカルアロマを軸に、女性の自立と在り方を学ぶコミュニティを運営。参加直後から過去アーカイブを視聴可能です。</p>
-        <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener" style="margin-top:24px">今すぐ参加する</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ORIGIN -->
-<section id="origin">
+<!-- ========== PROMISES ========== -->
+<section id="promises">
   <div class="container">
-    <span class="section-label reveal">Our Story</span>
-    <h2 class="section-title reveal">名称の由来</h2>
-    <div class="divider reveal"></div>
-    <div class="origin-card reveal">
-      <p><strong>Lotus Essence Academy</strong> は、旧称「I'm Me（ウェルネスアドバイザー養成スクール）」を母体として誕生しました。</p>
-      <p>I'm Me では、女性の自立支援を目的に予防医学・自然療法・メディカルアロマを軸に学びを提供してきました。その実践知をより多くの人に、より継続的に届けるために名称と構成を刷新。気軽に参加できるアカデミー形式へと進化しました。</p>
+    <div class="reveal" style="text-align:center; max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow">Our Promise</span>
+      <h2 class="section-title">LEAの約束</h2>
+      <div class="divider-line" style="margin-left:auto; margin-right:auto;"></div>
+      <p class="section-lede" style="margin-left:auto; margin-right:auto;">調律者として、あなたの可能性を最大化する。<br>LEAがあなたに約束する、4つのこと。</p>
+    </div>
+    <div class="promises-grid">
+      <div class="promise-item reveal">
+        <span class="promise-num">01</span>
+        <h3>自己認識を整える</h3>
+        <p>自分はどう在りたいのか。何を大切にしているのか。曖昧になっていた認識を、丁寧に言語化していきます。</p>
+      </div>
+      <div class="promise-item reveal">
+        <span class="promise-num">02</span>
+        <h3>判断軸を取り戻す</h3>
+        <p>誰かの正解ではなく、自分の軸で選び取る力を。揺らがない判断軸が、人生のあらゆる場面で支えになります。</p>
+      </div>
+      <div class="promise-item reveal">
+        <span class="promise-num">03</span>
+        <h3>本質に集中できる人生へ</h3>
+        <p>余計なものを抱え込まず、本当に大切なことに時間とエネルギーを向ける。それが豊かさの実感を生みます。</p>
+      </div>
+      <div class="promise-item reveal">
+        <span class="promise-num">04</span>
+        <h3>可能性を最大化する</h3>
+        <p>調律者として、あなた自身がまだ気づいていない強さや美しさを引き出す伴走を行います。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- ========== METHOD ========== -->
+<section id="method">
+  <div class="container">
+    <div class="method-head reveal">
+      <span class="eyebrow">Method</span>
+      <h2 class="section-title">調律コーチングとは</h2>
+      <div class="divider-line"></div>
+      <p class="section-lede">ズレた自己認識を整え、人生の判断軸を取り戻す。<br>その結果、誰と関わるか、何を捨てるか、どこに集中するか。<br>すべてを、迷いなく選べるようになる。</p>
+    </div>
+    <div class="method-icons">
+      <div class="method-icon-item reveal">
+        <div class="method-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="6"/><line x1="20" y1="2" x2="20" y2="8"/><line x1="20" y1="32" x2="20" y2="38"/></svg>
+        </div>
+        <h4>本来の自分に還る</h4>
+      </div>
+      <div class="method-icon-item reveal">
+        <div class="method-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><line x1="20" y1="6" x2="20" y2="34"/><line x1="6" y1="20" x2="34" y2="20"/><circle cx="20" cy="20" r="8"/></svg>
+        </div>
+        <h4>軸を整え<br>判断力を高める</h4>
+      </div>
+      <div class="method-icon-item reveal">
+        <div class="method-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><polygon points="20,5 24,15 35,16 27,24 30,35 20,29 10,35 13,24 5,16 16,15"/></svg>
+        </div>
+        <h4>理想の人生を<br>創造する</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSTRUCTOR ========== -->
+<section id="instructor">
+  <div class="container">
+    <div class="instructor-grid">
+      <div class="instructor-image reveal" role="img" aria-label="山﨑恵理香"></div>
+      <div class="instructor-text reveal">
+        <span class="eyebrow">Instructor</span>
+        <h2 class="instructor-name">山﨑 恵理香</h2>
+        <p class="instructor-name-en">Erika Yamazaki</p>
+        <div class="instructor-tags">
+          <span class="tag">ドテラ最年少ダブルダイヤモンド</span>
+          <span class="tag">調律コーチ</span>
+          <span class="tag">ウェルネスアドバイザー</span>
+        </div>
+        <div class="instructor-bio">
+          <p>「等身大の学びを実装する」をテーマに、Zoomライブとアーカイブ、質問ボックスを通じて、参加者ひとりひとりの前進を支えてきました。</p>
+          <p>予防医学・自然療法・メディカルアロマを軸に、女性の自立と在り方を学ぶコミュニティを運営。日々の暮らしに溶け込む形で、自分を整える時間を提供しています。</p>
+          <p>調律者として、あなた自身が本来持っている強さと、しなやかさを引き出す伴走を。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VALUES ========== -->
+<section id="values">
+  <div class="container">
+    <div class="values-head reveal">
+      <span class="eyebrow">Core Value</span>
+      <h2 class="section-title">大切にしている、4つの価値</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-item reveal">
+        <span class="value-mark">I</span>
+        <p class="value-text">芯の強さ × しなやかさ</p>
+      </div>
+      <div class="value-item reveal">
+        <span class="value-mark">II</span>
+        <p class="value-text">静けさの中にある豊かさ</p>
+      </div>
+      <div class="value-item reveal">
+        <span class="value-mark">III</span>
+        <p class="value-text">感性をひらき、人生をデザインする</p>
+      </div>
+      <div class="value-item reveal">
+        <span class="value-mark">IV</span>
+        <p class="value-text">自分を満たすことが、誰かの光になる</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
 <section id="features">
   <div class="container">
-    <span class="section-label reveal">What You Get</span>
-    <h2 class="section-title reveal">コンテンツ</h2>
-    <div class="divider reveal"></div>
+    <div class="features-head reveal">
+      <span class="eyebrow">What You Get</span>
+      <h2 class="section-title">アカデミーで受け取れるもの</h2>
+      <div class="divider-line"></div>
+      <p class="section-lede">月額制で参加できるオンラインアカデミー。<br>ライブ配信、アーカイブ、質問ボックス、コーチング、オフ会まで。</p>
+    </div>
     <div class="features-grid">
       <div class="feature-item reveal">
         <span class="feature-num">01</span>
         <h3>月1回のZoom配信</h3>
-        <p>ライブで恵理香と繋がる月1回の配信。学びはそのままアーカイブに追加されます。</p>
+        <p>恵理香と直接つながる月1回のライブ。学びはそのままアーカイブに追加されます。</p>
       </div>
       <div class="feature-item reveal">
         <span class="feature-num">02</span>
@@ -424,9 +904,9 @@
         <h3>質問ボックス</h3>
         <p>自由に質問OK。テーマを選んで不定期に回答します。</p>
       </div>
-      <div class="feature-item reveal">
+      <div class="feature-item reveal" style="position:relative">
+        <span class="feature-badge">有料オプション</span>
         <span class="feature-num">04</span>
-        <span class="tag tag-blue feature-badge">有料オプション</span>
         <h3>パーソナルコーチング</h3>
         <p>メンバー優先でご案内。個別の状況に合わせた1対1のサポートを受けられます。</p>
       </div>
@@ -439,15 +919,17 @@
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- ========== PRICING ========== -->
 <section id="pricing">
   <div class="container">
-    <span class="section-label reveal" style="display:block;text-align:center">Pricing</span>
-    <h2 class="section-title reveal" style="text-align:center">料金</h2>
-    <div class="divider reveal" style="margin-left:auto;margin-right:auto"></div>
+    <div class="pricing-head reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-title">月額料金</h2>
+      <div class="divider-line"></div>
+    </div>
     <div class="pricing-card reveal">
-      <p style="font-size:12px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase">Monthly</p>
-      <div class="pricing-amount">¥5,500</div>
+      <span class="pricing-label">Monthly</span>
+      <div class="pricing-amount"><span class="yen">¥</span>5,500</div>
       <p class="pricing-unit">/ 月（税込）</p>
       <p class="pricing-note">入会金なし・初月から課金開始<br>クレジットカード・口座振替（会費ペイ）対応</p>
       <ul class="pricing-features">
@@ -457,18 +939,36 @@
         <li>オフ会優先参加</li>
         <li>パーソナルコーチング優先案内（有料）</li>
       </ul>
-      <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener" style="width:100%;padding:16px;font-size:15px">今すぐ参加する</a>
+      <a class="btn-primary" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener" style="width:100%; padding:16px; font-size:14px;">今すぐ参加する</a>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ========== ORIGIN ========== -->
+<section id="origin">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2 class="section-title">名称の由来</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="origin-card reveal">
+      <p><strong>LEA — Lotus Essence Academy</strong> は、旧称「I'm Me（ウェルネスアドバイザー養成スクール）」を母体として誕生しました。</p>
+      <p>I'm Me では、女性の自立支援を目的に予防医学・自然療法・メディカルアロマを軸に学びを提供してきました。その実践知をより多くの人に、より継続的に届けるために名称と構成を刷新。</p>
+      <p>そしていま、<strong>LEA = Life × Alignment</strong> として、自分を整え、人生の軸を取り戻す「調律コーチング」へと進化しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
 <section id="faq">
   <div class="container">
-    <span class="section-label reveal">FAQ</span>
-    <h2 class="section-title reveal">よくある質問</h2>
-    <div class="divider reveal"></div>
-    <div class="faq-list">
+    <div class="reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">よくある質問</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="faq-list" style="margin-top: 40px;">
       <details class="faq-item reveal">
         <summary>Q. 質問は必ず回答されますか？</summary>
         <p class="faq-answer">すべての質問への回答はお約束できません。テーマを選定し、不定期にお答えします。</p>
@@ -481,17 +981,29 @@
         <summary>Q. 退会はできますか？</summary>
         <p class="faq-answer">退会はいつでも可能です。毎月20日までに所定フォームから申請いただいた場合のみ、翌月以降の課金を停止できます。退会フォームは申込み完了メールに記載されています。</p>
       </details>
+      <details class="faq-item reveal">
+        <summary>Q. パーソナルコーチングはどう申し込めますか？</summary>
+        <p class="faq-answer">アカデミー会員の方を優先にご案内しています。詳細はアカデミー内でお知らせします。</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ========== FINAL CTA ========== -->
+<section id="final-cta">
+  <div class="container reveal">
+    <p class="final-cta-text">いま、<em>あなたの軸</em>を、<br>取り戻すときへ。</p>
+    <a class="btn-primary large" href="https://www.kaihipay.jp/forms?form_code=3820312447737049" target="_blank" rel="noopener">LEAに参加する</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
 <footer>
   <div class="container footer-inner">
     <div class="footer-logo">
-      <img src="logo_1.png" alt="Lotus Essence Academy">
+      <img src="logo_1.png" alt="LEA - Lotus Essence Academy">
     </div>
-    <p class="footer-copy">&copy; 2025 Lotus Essence Academy</p>
+    <p class="footer-copy">&copy; 2026 LEA — Lotus Essence Academy</p>
   </div>
 </footer>
 
@@ -518,7 +1030,7 @@
     entries.forEach(ent => {
       if (ent.isIntersecting) { ent.target.classList.add('in'); io.unobserve(ent.target); }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
